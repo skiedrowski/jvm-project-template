@@ -1,0 +1,21 @@
+//http://www.jworks.nl/2013/06/03/jacoco-code-coverage-with-gradle/
+//http://www.gradle.org/docs/current/userguide/jacoco_plugin.html
+
+apply plugin: 'jacoco'
+
+//jacoco {
+//	toolVersion = "0.7.1.201405082137"
+//	reportsDir = file("$buildDir/customJacocoReportDir")
+//}
+
+jacocoTestReport {
+	group = "Reporting"
+	description = "Generate Jacoco coverage reports after running tests."
+	additionalSourceDirs = files(sourceSets.main.allJava.srcDirs, sourceSets.test.allJava.srcDirs)
+
+	reports {
+		xml.enabled true
+	}
+}
+jacocoTestReport.dependsOn(test)
+check.dependsOn(jacocoTestReport)

@@ -1,0 +1,46 @@
+// HINT: if a generated sources directory needs to be excluded, the build.gradle of the corresponding module/project
+// has to contain something like
+//
+// skip analysis for source folder with generated sources
+//     checkstyleWsdlGen.enabled = false
+//
+// alternatively, certain packages/directories may be skipped
+//     def excludePattern = 'com/zitecs/ologis/msv3/webservices/v1/'
+//     def excludePatternAntStyle = '**/' + excludePattern + '*'
+//     tasks.withType(FindBugs) {
+//	       classes = classes.filter { !it.path.contains(excludePattern) }
+//     }
+//     tasks.withType(Checkstyle) {
+//	       exclude excludePatternAntStyle
+//     }
+//     tasks.withType(Pmd) {
+//         exclude excludePatternAntStyle
+//     }
+
+def staticAnalysisCfgDir = "$rootProject.projectDir/buildscripts/staticanalysis"
+
+apply plugin: 'checkstyle'
+checkstyle {
+	ignoreFailures = true
+	toolVersion = '6.0'
+}
+checkstyleMain.configFile project.file("$staticAnalysisCfgDir/checkstyle/checkstyle_main_rules.xml")
+checkstyleTest.configFile project.file("$staticAnalysisCfgDir/checkstyle/checkstyle_test_rules.xml")
+
+apply plugin: 'pmd'
+pmd {
+	ignoreFailures = true
+	toolVersion = '5.1.3'
+}
+pmdMain.ruleSetFiles = files("$staticAnalysisCfgDir/pmd/pmd_main_rules.xml")
+pmdTest.ruleSetFiles = files("$staticAnalysisCfgDir/pmd/pmd_test_rules.xml")
+
+apply plugin: 'findbugs'
+findbugs {
+	ignoreFailures = true
+	toolVersion = '3.0.0'
+}
+findbugsMain.excludeFilter = file("$staticAnalysisCfgDir/findbugs/findbugs_exclusions_main.xml")
+findbugsTest.excludeFilter = file("$staticAnalysisCfgDir/findbugs/findbugs_exclusions_test.xml")
+
+

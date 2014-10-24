@@ -1,0 +1,52 @@
+//TODO the following (needs to be put into build.gradle)
+//buildscript {
+//	ext.kotlin_version = '0.9.66'
+//	repositories {
+//		mavenCentral()
+//	}
+//	dependencies {
+//		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//	}
+//}
+
+apply plugin: 'kotlin'
+
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+compileKotlin {
+	kotlinOptions.annotations = file('annotations')
+}
+compileTestKotlin {
+	kotlinOptions.annotations = file('annotations')
+}
+
+//TODO KOTLIN
+//http://confluence.jetbrains.com/display/Kotlin/Kotlin+Build+Tools?focusedCommentId=51187103#comment-51187103
+//http://youtrack.jetbrains.com/issue/KT-3490
+//http://forums.gradle.org/gradle/topics/test_task_scan_directory
+//should be fixed since M0.6?!?!
+test.testClassesDir = project.tasks.compileTestKotlin.destinationDir
+
+//
+// Other plugins than kotlin allow putting the buildscript section into an extra file, but kotlin 0.9.66 throws a NPE
+// if you do so
+//
+// If it works, "apply plugin: " needs to use a class name instead of the plugin name:
+//      apply plugin: org.jetbrains...KotlinPluginWrapper
+// instead of
+//      apply plugin: 'kotlin'
+//
+// see http://stackoverflow.com/questions/12436048/gradle-cannot-configure-artifactory-from-an-external-build-script for
+// an explanation
+//
+/*
+NullPointer here... (last run: ./gradlew clean build --stacktrace --debug)
+sources: https://github.com/JetBrains/kotlin/blob/991c33d236fb918e66dd998ea35b8d4d1d00ba1c/libraries/tools/kotlin
+-gradle-plugin/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinPluginWrapper.kt
+
+Caused by: kotlin.KotlinNullPointerException
+17:07:28.742 [ERROR] [org.gradle.BuildExceptionReporter]        at org.jetbrains.kotlin.gradle.plugin
+.KotlinBasePluginWrapper.findSourceBuildScript(KotlinPluginWrapper.kt:81)
+ */
