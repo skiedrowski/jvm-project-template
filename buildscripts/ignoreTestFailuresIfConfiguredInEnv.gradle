@@ -1,0 +1,3 @@
+tasks.withType(Test) {
+	ignoreFailures = project.rootProject.ext.get('config').ignoreTestFailures
+}

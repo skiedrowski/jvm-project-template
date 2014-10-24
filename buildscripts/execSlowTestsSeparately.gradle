@@ -1,0 +1,23 @@
+test {
+	useJUnit {
+		excludeCategories 'info.kiedrowski.mpt.junit.categories.SlowTest'
+	}
+	//redirect reports into a task specific subdir to avoid different test tasks
+	//overwriting each others results (happens when categories are defined at test
+	//method instead of test class)
+	reports {
+		html.destination = file("$buildDir/reports/tests")
+		junitXml.destination = file("$buildDir/test-results/test")
+	}
+}
+
+task slowTest(type: Test) {
+	useJUnit {
+		includeCategories 'info.kiedrowski.mpt.junit.categories.SlowTest'
+	}
+	reports {
+		html.destination = file("$buildDir/reports/slowTests")
+		junitXml.destination = file("$buildDir/test-results/slowTest")
+	}
+}
+build.dependsOn(slowTest)
