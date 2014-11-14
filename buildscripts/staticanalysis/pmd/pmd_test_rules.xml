@@ -19,7 +19,7 @@
     </rule>
     <rule ref="rulesets/java/codesize.xml/TooManyMethods">
         <properties>
-            <property name="maxmethods" value="20"/>
+            <property name="maxmethods" value="50"/>
         </properties>
     </rule>
 

@@ -2,7 +2,9 @@
 // has to contain something like
 //
 // skip analysis for source folder with generated sources
-//     checkstyleWsdlGen.enabled = false
+//     checkstyleJaxb.enabled = false
+//     findbugsJaxb.enabled = false
+//     pmdJaxb.enabled = false
 //
 // alternatively, certain packages/directories may be skipped
 //     def excludePattern = 'com/zitecs/ologis/msv3/webservices/v1/'
