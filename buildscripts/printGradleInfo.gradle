@@ -2,5 +2,7 @@ println """\n
 Gradle-Build with version: $gradle.gradleVersion - http://www.gradle.org
 Gradle home: $gradle.gradleHomeDir
 Gradle user directory: $gradle.gradleUserHomeDir
+Base directory: $projectDir
 Running script: ${relativePath(buildFile)}
+Java version: ${System.properties['java.version']}
 """

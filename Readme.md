@@ -27,52 +27,10 @@ Its only purpose is to provide the whole project with all classes needed at runt
 
 Gradle Build
 ============
-The template contains a number of gradle build scripts conveniently organized in the `buildscripts` folder.
-
-Each script implements a build feature in a reasonable granularity. They should be included into the main/module build.gradle to keep the build.gradle itself small.
-
-In addition to the *.gradle build scripts, this folder also contains `Snippets.md` with gradle snippets that one might want to copy into a `build.gradle`.
-
-The main build.gradle contains a number of `TODO`s which indicate where customization is very likely needed.
-
-Common Gradle Tasks
--------------------
-If the build is configured accordingly there are the following common build tasks available:
-
-clean build directory
-
-    gradlew clean
-
-run tests (only those which are NOT annotated with @Category(SlowTest.class))
-
-	gradlew test
-
-run slow tests (only those which are annotated with @Category(SlowTest.class))
-
-	gradlew slowTest
-
-Analyse (Checkstyle, PMD, Findbugs, JaCoCo)
-
-     gradlew check
-
-CodeCoverage (JaCoCo)
-
-	gradlew jacocoTestReport
-
-build jar, run tests, run slow tests, run checks
-
-	gradlew build
-
-install into local maven (classes, sources, javadoc)
-
-	gradlew install
-
-upload into nexus (classes, sources, javadoc; snapshots/releases depending on version)
- 
-	gradlew upload
+Read a description of the [build here](docs/gradleBuild.md)
  	
 Release
--------
+=======
 A release may be built by following these steps:
  
 * set release version (without -SNAPSHOT) in main build.gradle 
