@@ -36,8 +36,8 @@ build jar, run tests, run slow tests, run checks
 
 	gradlew build
 
-### Maven
-Maven tasks depend on something like [mavenSnippets](../buildscripts/snippets/mavenSnippets.md).
+### Maven (Upstream)
+Maven tasks depend on [mavenUpstream.gradle](../buildscripts/mavenUpstream.md) and the according configuration variables.
 Depending on the build, the following artifacts are uploaded: classes, sources, javadoc; snapshots/releases depending on `version`
 
 install into local maven
