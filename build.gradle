@@ -44,6 +44,6 @@ subprojects {
 	apply from: "$buildscriptDir/logAllTests.gradle"
 	apply from: "$buildscriptDir/ignoreTestFailuresIfConfiguredInEnv.gradle"
 
-	//TODO setup maybe add maven (see Snippets.md)
+	//TODO setup maybe add maven (see buildscripts/snippets/...)
 }
 apply from: "$buildscriptDir/wrapper.gradle"

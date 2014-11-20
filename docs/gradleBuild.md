@@ -37,7 +37,7 @@ build jar, run tests, run slow tests, run checks
 	gradlew build
 
 ### Maven
-The maven tasks depend on something like [mavenSnippets](../buildscripts/snippets/mavenSnippets.md).
+Maven tasks depend on something like [mavenSnippets](../buildscripts/snippets/mavenSnippets.md).
 Depending on the build, the following artifacts are uploaded: classes, sources, javadoc; snapshots/releases depending on `version`
 
 install into local maven
@@ -47,5 +47,27 @@ install into local maven
 upload into nexus
 
 	gradlew upload
+
+###Application Tasks
+Application Tasks depend on somethink like [applicationSnippets](../buildscripts/snippets/applicationSnippets.md).
+
+create app in build/install
+	
+	gradlew installApp
+	
+create zip containing the whole app (zips the result of installApp, suitable for distribution)
+	
+	gradlew distZip
+ 
+###Possible  Release Process
+ 
+ * set release version (without -SNAPSHOT) in local build.gradle 
+ * commit && push
+ * if the version to be released already exists in nexus, it has to be deleted firstly (or you'll get "error code 400: bad request")
+ * run PrescriptionOCR buildjob on Jenkins (manually)
+ * set next snapshot version (with -SNAPSHOT) in local build.gradle
+ * commit && push
+
+the app may be downloaded via the build job. It is currently not deployed to nexus.
 
 
