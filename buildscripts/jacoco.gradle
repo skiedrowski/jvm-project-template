@@ -8,14 +8,16 @@ apply plugin: 'jacoco'
 //	reportsDir = file("$buildDir/customJacocoReportDir")
 //}
 
-jacocoTestReport {
-	group = "Reporting"
-	description = "Generate Jacoco coverage reports after running tests."
-	additionalSourceDirs = files(sourceSets.main.allJava.srcDirs, sourceSets.test.allJava.srcDirs)
-
-	reports {
-		xml.enabled true
-	}
-}
-jacocoTestReport.dependsOn(test)
-check.dependsOn(jacocoTestReport)
+//this is only needed if we'd like to receive a html, xml, or csv report
+//jacocoTestReport {
+//	group = "Reporting"
+//	description = "Generate Jacoco coverage reports after running tests."
+//	additionalSourceDirs = files(sourceSets.main.allJava.srcDirs, sourceSets.test.allJava.srcDirs)
+//	additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+//
+//	reports {
+//		xml.enabled true
+//	}
+//}
+//jacocoTestReport.dependsOn(test)
+//check.dependsOn(jacocoTestReport)
