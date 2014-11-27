@@ -7,7 +7,7 @@
 //     pmdJaxb.enabled = false
 //
 // alternatively, certain packages/directories may be skipped
-//     def excludePattern = 'com/zitecs/ologis/msv3/webservices/v1/'
+//     def excludePattern = 'info/kiedrowski/module/webservices/v1/'
 //     def excludePatternAntStyle = '**/' + excludePattern + '*'
 //     tasks.withType(FindBugs) {
 //	       classes = classes.filter { !it.path.contains(excludePattern) }

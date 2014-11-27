@@ -14,5 +14,10 @@
         <!-- allowed especially for JUnit @Rule classes -->
         <Bug pattern="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD"/>
     </Match>
+    <Match>
+        <!-- allowed in tests -->
+        <Bug pattern="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE"/>
+    </Match>
+
 </FindBugsFilter>
 
