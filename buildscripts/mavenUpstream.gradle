@@ -29,7 +29,7 @@ uploadArchives {
 	repositories {
 		mavenDeployer {
 			repository(url: nexusURL) {
-				authentication(userName: nexusUser, password: nexusPwd)
+				authentication(userName: "${nexusUser}", password: "${nexusPwd}")
 			}
 		}
 	}
