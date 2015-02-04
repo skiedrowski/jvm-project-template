@@ -8,4 +8,12 @@ allprojects {
 			}
 		}
 	}
+
+	tasks.withType(Javadoc) {
+		doFirst {
+			if (environment == "ci") {
+				println "\n"
+			}
+		}
+	}
 }
