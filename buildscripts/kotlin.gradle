@@ -1,6 +1,6 @@
-//TODO the following (needs to be put into build.gradle)
+//TODO the following needs to be put into build.gradle
 //buildscript {
-//	ext.kotlin_version = '0.9.66'
+//	ext.kotlin_version = '0.10.195'
 //	repositories {
 //		mavenCentral()
 //	}
