@@ -44,9 +44,9 @@ test.testClassesDir = project.tasks.compileTestKotlin.destinationDir
 /*
 NullPointer here... (last run: ./gradlew clean build --stacktrace --debug)
 sources: https://github.com/JetBrains/kotlin/blob/991c33d236fb918e66dd998ea35b8d4d1d00ba1c/libraries/tools/kotlin
--gradle-plugin/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinPluginWrapper.kt
+-gradle-plugin/src/main/kotlin/org/jetbrains/kotlin/gradle/plugin/KotlinPluginWrapper.main.k
 
 Caused by: kotlin.KotlinNullPointerException
 17:07:28.742 [ERROR] [org.gradle.BuildExceptionReporter]        at org.jetbrains.kotlin.gradle.plugin
-.KotlinBasePluginWrapper.findSourceBuildScript(KotlinPluginWrapper.kt:81)
+.KotlinBasePluginWrapper.findSourceBuildScript(KotlinPluginWrapper.main.k:81)
  */

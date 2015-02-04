@@ -21,3 +21,9 @@ apply plugin: 'jacoco'
 //}
 //jacocoTestReport.dependsOn(test)
 //check.dependsOn(jacocoTestReport)
+
+//if only production sources should be taken into account, this can be configured
+//i.e. for Jenkins:
+// * Path to class directories == **/classes/main
+// * Path to source directories == **/src/main/java,**/src/main/wsdlGen
+// * Exclusions == **/webservices/**/*.class

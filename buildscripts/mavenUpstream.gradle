@@ -1,7 +1,8 @@
 // This file adds an upstream repository. If a snapshot repository is needed, the build needs to add it on its own
 //
 //  	//add snapshop repo
-//      uploadArchives.repositories.mavenDeployer.snapshotRepository(url: "https://MY_SERVER/content/repositories/snapshots") {
+//      uploadArchives.repositories.mavenDeployer.snapshotRepository(url:
+// "https://MY_SERVER/content/repositories/snapshots") {
 //          authentication(userName: ..., password: ...)
 //      }
 //
@@ -10,28 +11,14 @@
 //      version = <maven version>
 //      group = <maven group id>
 //
-// You might want to put the configuration into gradle.properties (either project specific and git-ignored or ~/.gradle/gradle.properties)
-//
-// nexusURL
-// nexusUser
-// nexusPwd
-//
-//example gradle.properties:
-//
-//    nexusURL=https://myNexusServer/content/repositories/thirdparty
-//    # read value from global variables:
-//    nexusUser=${companyDeploymentUser}
-//    nexusPwd=${companyDeploymentPassword}
+// You might want to put the configuration into gradle.properties (either project specific and git-ignored or ~/
+// .gradle/gradle.properties)
 
 apply plugin: 'maven'
 
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			repository(url: nexusURL) {
-				authentication(userName: "${nexusUser}", password: "${nexusPwd}")
-			}
-		}
+uploadArchives.repositories.mavenDeployer {
+	repository(url: mvnRepoDeployURL) {
+		authentication(userName: mvnRepoDeployUser, password: mvnRepoDeployPwd)
 	}
 }
 

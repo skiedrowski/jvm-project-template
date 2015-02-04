@@ -1,14 +1,11 @@
 <?xml version="1.0"?>
-<ruleset name="Custom ruleset"
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Custom ruleset"
          xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
     <description>
         This ruleset checks my code for bad stuff
     </description>
-
     <!-- http://pmd.sourceforge.net/pmd-5.2.0/customizing/howtomakearuleset.html -->
-
     <!--<rule ref="rulesets/java/android.xml"/>-->
     <rule ref="rulesets/java/basic.xml"/>
     <rule ref="rulesets/java/braces.xml"/>
@@ -22,7 +19,6 @@
             <property name="maxmethods" value="20"/>
         </properties>
     </rule>
-
     <rule ref="rulesets/java/comments.xml">
         <exclude name="CommentRequired"/>
         <exclude name="CommentSize"/>
@@ -45,7 +41,6 @@
             <property name="ignoreMagicNumbers" value="0,1"/>
         </properties>
     </rule>
-
     <rule ref="rulesets/java/coupling.xml">
         <!-- needs to be configured first -->
         <exclude name="LoosePackageCoupling"/>
@@ -53,6 +48,7 @@
     </rule>
     <rule ref="rulesets/java/design.xml">
         <exclude name="AccessorClassGeneration"/>
+        <exclude name="SwitchStmtsShouldHaveDefault"/>
     </rule>
     <rule ref="rulesets/java/empty.xml"/>
     <rule ref="rulesets/java/finalizers.xml"/>
@@ -65,6 +61,9 @@
         <exclude name="JUnitTestContainsTooManyAsserts"/>
         <exclude name="JUnitAssertionsShouldIncludeMessage"/>
         <exclude name="JUnitTestsShouldIncludeAssert"/>
+        <exclude name="UseAssertSameInsteadOfAssertTrue"/>
+        <!-- this rule applies to JUnit 3.x, not 4.x -->
+        <exclude name="TestClassWithoutTestCases"/>
     </rule>
     <!--<rule ref="rulesets/java/logging-jakarta-commons.xml"/>-->
     <!--<rule ref="rulesets/java/logging-java.xml"/>-->
@@ -77,6 +76,7 @@
         <exclude name="LongVariable"/>
         <exclude name="ShortClassName"/>
         <exclude name="ShortVariable"/>
+        <exclude name="ShortMethodName"/>
     </rule>
     <rule ref="rulesets/java/optimizations.xml">
         <exclude name="AvoidInstantiatingObjectsInLoops"/>
@@ -87,9 +87,6 @@
     <rule ref="rulesets/java/typeresolution.xml"/>
     <rule ref="rulesets/java/unnecessary.xml"/>
     <rule ref="rulesets/java/unusedcode.xml"/>
-
     <rule ref="rulesets/xml/basic.xml"/>
-
     <rule ref="rulesets/xsl/xpath.xml"/>
-
 </ruleset>

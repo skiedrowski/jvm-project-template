@@ -44,6 +44,19 @@ subprojects {
 	apply from: "$buildscriptDir/logAllTests.gradle"
 	apply from: "$buildscriptDir/ignoreTestFailuresIfConfiguredInEnv.gradle"
 
-	//TODO setup apply from: "$buildscriptDir/mavenUpstream.gradle"
+	/*
+	ext {
+		mvnRepoDeployURL = TODO
+		mvnRepoDeployUser = TODO
+		mvnRepoDeployPwd = TODO
+	}
+	
+	apply from: "$buildscriptDir/mavenUpstream.gradle"
+	//add snapshop repo
+	uploadArchives.repositories.mavenDeployer.snapshotRepository(url: TODO) {
+		authentication(userName: mvnRepoDeployUser, password: mvnRepoDeployPwd)
+	}
+	*/
 }
+apply from: "$buildscriptDir/fixJenkins.gradle"
 apply from: "$buildscriptDir/wrapper.gradle"

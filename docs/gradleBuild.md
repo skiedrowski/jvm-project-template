@@ -36,6 +36,11 @@ build jar, run tests, run slow tests, run checks
 
 	gradlew build
 
+refresh (especially SNAPSHOT) dependencies, i.e.
+
+	gradlew clean build --refresh-dependencies
+
+
 ### Maven (Upstream)
 Maven tasks depend on [mavenUpstream.gradle](../buildscripts/mavenUpstream.md) and the according configuration variables.
 Depending on the build, the following artifacts are uploaded: classes, sources, javadoc; snapshots/releases depending on `version`
@@ -44,7 +49,7 @@ install into local maven
 
 	gradlew install
 
-upload into nexus
+upload into nexus (or another repositoy)
 
 	gradlew upload
 
@@ -52,22 +57,22 @@ upload into nexus
 Application Tasks depend on somethink like [applicationSnippets](../buildscripts/snippets/applicationSnippets.md).
 
 create app in build/install
-	
+
 	gradlew installApp
-	
+
 create zip containing the whole app (zips the result of installApp, suitable for distribution)
-	
+
 	gradlew distZip
- 
+
+run the application
+
+    gradlew run
+
 ###Possible  Release Process
- 
- * set release version (without -SNAPSHOT) in local build.gradle 
+
+ * set release version (without -SNAPSHOT) in local build.gradle
  * commit && push
- * if the version to be released already exists in nexus, it has to be deleted firstly (or you'll get "error code 400: bad request")
+ * if the version to be released already exists in the repository, it has to be deleted firstly (or you'll get "error code 400: bad request")
  * run PrescriptionOCR buildjob on Jenkins (manually)
  * set next snapshot version (with -SNAPSHOT) in local build.gradle
  * commit && push
-
-the app may be downloaded via the build job. It is currently not deployed to nexus.
-
-
