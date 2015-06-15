@@ -40,6 +40,10 @@ refresh (especially SNAPSHOT) dependencies, i.e.
 
 	gradlew clean build --refresh-dependencies
 
+show dependency tree
+
+	gradlew dependencies
+	gradlew :module:dependencies
 
 ### Maven (Upstream)
 Maven tasks depend on [mavenUpstream.gradle](../buildscripts/mavenUpstream.md) and the according configuration variables.

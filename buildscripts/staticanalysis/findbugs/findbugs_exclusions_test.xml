@@ -22,6 +22,8 @@
         <!-- allowed in tests; this is sometimes exactly what we need to test -->
         <Bug pattern="CN_IDIOM"/>
     </Match>
-
+    <Match>
+        <Bug pattern="RV_EXCEPTION_NOT_THROWN"/>
+    </Match>
 </FindBugsFilter>
 

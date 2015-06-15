@@ -51,6 +51,7 @@ bin
 *.ids
 .idea
 /out/
+/classes/
 
 # Gradle #
 ##########

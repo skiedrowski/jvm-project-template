@@ -77,6 +77,7 @@
         <exclude name="ShortClassName"/>
         <exclude name="ShortVariable"/>
         <exclude name="ShortMethodName"/>
+        <exclude name="AvoidFieldNameMatchingMethodName"/>
     </rule>
     <rule ref="rulesets/java/optimizations.xml">
         <exclude name="AvoidInstantiatingObjectsInLoops"/>
