@@ -1,0 +1,55 @@
+CHANGELOG
+=========
+
+V0.6+ (IN PROGRESS)
+-------------------
+* kotlin snippet update from M10 to M12
+* rename showcase JUnit Test category from `SlowTest` to `SequentialTest`
+* update gradle 2.2 to 2.4
+* a number of smaller fixes, enhancements, and docs
+
+V0.6 (2015-06-15)
+-----------------
+* new snippet forceSpecificDependencyVersion.md
+* new snippet javaeeSnippets.md
+* Checkstyle: ignore rule "ArrayTrailingComma"
+* Findbugs: ignore rule "RV_EXCEPTION_NOT_THROWN" for tests (rule is still active in production code)
+* PMD: ignore rule AvoidFieldNameMatchingMethodName
+* fixJenkins.gradle: fix missing newlines when running within Jenkins for JavaDoc tasks
+* a number of smaller fixes, enhancements, and docs
+
+V0.5 (2015-02-04)
+-----------------
+* maven upload reworked regarding username/password maintained outside of the project
+* fixJenkins.gradle: fix missing newlines when running within Jenkins for JavaDoc tasks
+* Checkstyle: ignore rule "MissingSwitchDefault"
+* Checkstyle: rule VisibilityModifier allows public variables named "thrown" or "scenario" in test code
+* Findbugs: rule CN_IDIOM excluded in test code, since this is a test subject
+* PMD: rule "SwitchStmtsShouldHaveDefault" excluded
+* PMD: rule "UseAssertSameInsteadOfAssertTrue" and "TestClassWithoutTestCases" excluded
+* PMD: rule "ShortMethodName" excluded
+* a number of smaller fixes, enhancements, and docs
+
+V0.4 (2014-11-27)
+-----------------
+* do not generate a jacoco report by default
+* Findbugs: RV_RETURN_VALUE_IGNORED_BAD_PRACTICE excluded in test code
+* a number of smaller fixes, enhancements, and docs
+
+V0.3 (2014-11-20)
+-----------------
+* replace `mavenSnippets.md` with `mavenUpstream.gradle`
+* Findbugs: do not scan class files originating from kotlin code
+* a number of smaller fixes, enhancements, and docs
+
+V0.2 (2014-11-17)
+-----------------
+* add applicationSnippets.md, jaxbSnippets.md, jaxwsSnippets.md, mavenSnippets.md, and testSnippets.md
+* update gradle 2.1 to 2.2
+* update codequality docs
+* PMD: allow up to 50 methods in rule TooManyMethods
+* a number of smaller fixes, enhancements, and docs
+
+V0.1 (2014-11-14)
+-----------------
+* initial public release
