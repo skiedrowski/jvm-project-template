@@ -1,6 +1,6 @@
 //TODO the following needs to be put into build.gradle
 //buildscript {
-//	ext.kotlin_version = '0.10.195'
+//	ext.kotlin_version = '0.12.412'
 //	repositories {
 //		mavenCentral()
 //	}
@@ -8,6 +8,8 @@
 //		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 //	}
 //}
+//
+//apply from: "$buildscriptDir/kotlin.gradle"
 
 apply plugin: 'kotlin'
 
@@ -15,6 +17,8 @@ apply plugin: 'kotlin'
 dependencies {
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
+
+//see http://kotlinlang.org/docs/reference/using-gradle.html
 compileKotlin {
 	kotlinOptions.annotations = file('annotations')
 }
