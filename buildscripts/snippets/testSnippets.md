@@ -12,7 +12,7 @@ For all test tasks
 
 only within a special test task
 
-    task slowTest(type: Test) {
+    task sequentialTest(type: Test) {
         testLogging {
             events 'passed'
         }
@@ -35,4 +35,4 @@ or
 Using JUnit Categories
 ======================
 
-see execSlowTestsSeparately.gradle
+see execSequentialTestsSeparately.gradle

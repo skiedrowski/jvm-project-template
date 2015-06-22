@@ -1,6 +1,6 @@
 test {
 	useJUnit {
-		excludeCategories 'info.kiedrowski.mpt.junit.categories.SlowTest'
+		excludeCategories 'info.kiedrowski.mpt.junit.categories.SequentialTest'
 	}
 	//redirect reports into a task specific subdir to avoid different test tasks
 	//overwriting each others results (happens when categories are defined at test
@@ -11,13 +11,13 @@ test {
 	}
 }
 
-task slowTest(type: Test) {
+task sequentialTest(type: Test) {
 	useJUnit {
-		includeCategories 'info.kiedrowski.mpt.junit.categories.SlowTest'
+		includeCategories 'info.kiedrowski.mpt.junit.categories.SequentialTest'
 	}
 	reports {
-		html.destination = file("$buildDir/reports/slowTests")
-		junitXml.destination = file("$buildDir/test-results/slowTest")
+		html.destination = file("$buildDir/reports/sequentialTests")
+		junitXml.destination = file("$buildDir/test-results/sequentialTest")
 	}
 }
-build.dependsOn(slowTest)
+build.dependsOn(sequentialTest)

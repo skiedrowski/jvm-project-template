@@ -39,7 +39,7 @@ subprojects {
 	
 	test.maxParallelForks = Runtime.runtime.availableProcessors()
 
-	//TODO setup apply from: "$buildscriptDir/execSlowTestsSeparately.gradle"
+	//apply from: "$buildscriptDir/execSequentialTestsSeparately.gradle"
 
 	apply from: "$buildscriptDir/logAllTests.gradle"
 	apply from: "$buildscriptDir/ignoreTestFailuresIfConfiguredInEnv.gradle"

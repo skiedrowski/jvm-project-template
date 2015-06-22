@@ -16,13 +16,13 @@ clean build directory
 
     gradlew clean
 
-run tests (only those which are NOT annotated with @Category(SlowTest.class))
+run tests (only those which are NOT annotated with @Category(SequentialTest.class), if `execSequentialTestsSeparately.gradle` is used)
 
 	gradlew test
 
-run slow tests (only those which are annotated with @Category(SlowTest.class))
+run slow tests (only those which are annotated with @Category(SequentialTest.class), if `execSequentialTestsSeparately.gradle` is used)
 
-	gradlew slowTest
+	gradlew sequentialTest
 
 analyse (Checkstyle, PMD, Findbugs, JaCoCo)
 
