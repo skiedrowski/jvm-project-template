@@ -5,6 +5,7 @@ def buildscriptDir = "$rootProject.projectDir/buildscripts"
 
 apply from: "$buildscriptDir/loadEnvironment.gradle"
 apply from: "$buildscriptDir/printGradleInfo.gradle"
+apply from: "$buildscriptDir/loadVersions.gradle"
 
 subprojects {
 	apply plugin: 'java'
@@ -23,10 +24,10 @@ subprojects {
 	}
 
 	dependencies {
-		testCompile 'junit:junit-dep:4.+'
-		testCompile "org.hamcrest:hamcrest-core:1.3"
-		testCompile "org.hamcrest:hamcrest-library:1.3"
-		testCompile("org.mockito:mockito-core:1.9.5") {
+		testCompile "junit:junit-dep:$ver.junit"
+		testCompile "org.hamcrest:hamcrest-core:$ver.hamcrest"
+		testCompile "org.hamcrest:hamcrest-library:$ver.hamcrest"
+		testCompile("org.mockito:mockito-core:$ver.mockito") {
 			exclude group: "org.hamcrest"
 		}
 	}
