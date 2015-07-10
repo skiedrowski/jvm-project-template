@@ -4,6 +4,8 @@ These features are either too small to justify a separate script file or they ar
 
 
 * [applicationSnippets](applicationSnippets.md): pack a project and its dependencies into an application or zip
-* [jaxbSnippets](jaxbSnippets.md) compile xsds into java classes using jaxb
-* [jaxwsSnippets](jaxwsSnippets.md) compile wsdls into java classes using jax-ws
-* [testSnippets](testSnippets.md) useful snippets for (J)Unit testing
+* [forceSpecificDependencyVersion](forceSpecificDependencyVersion.md): override gradle dependency resolution mechanism
+* [javaeeSnippets](javaeeSnippets.md): java ee - related snippets
+* [jaxbSnippets](jaxbSnippets.md): compile xsds into java classes using jaxb
+* [jaxwsSnippets](jaxwsSnippets.md): compile wsdls into java classes using jax-ws
+* [testSnippets](testSnippets.md): useful snippets for (J)Unit testing

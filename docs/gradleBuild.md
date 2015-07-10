@@ -1,12 +1,12 @@
 Gradle Build
 ============
-The template contains a number of gradle build scripts conveniently organized in the `buildscripts` folder.
+The project uses gradle buildscripts maintained in [jvm-project-template](https://github.com/skiedrowski/jvm-project-template). The scripts are conveniently organized in the `buildscripts` folder.
 
-Each script implements a build feature in a reasonable granularity. They should be included into the main/module build.gradle to keep the build.gradle itself small.
+Each script implements a build feature in a reasonable granularity. They should be included into the main/module build.gradle to keep the build.gradle itself small and readable.
 
-In addition to the *.gradle build scripts, this folder also contains [snippets](../buildscripts/snippets/_info_.md) with gradle snippets that one might want to copy into a `build.gradle`.
+In addition to the *.gradle build scripts, this folder also contains [snippets](../buildscripts/snippets/_info_.md) with gradle snippets that one might want to adapt and copy into a `build.gradle`.
 
-The main build.gradle contains a number of `TODO`s which indicate where customization is very likely needed.
+The main build.gradle contains a number of `TODO` tags which indicate where customization is very likely needed.
 
 Common Gradle Tasks
 -------------------
@@ -72,7 +72,7 @@ run the application
 
     gradlew run
 
-###Possible  Release Process
+###Possible Release Process
 
  * set release version (without -SNAPSHOT) in local build.gradle
  * commit && push
