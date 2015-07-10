@@ -1,6 +1,6 @@
 Gradle Build
 ============
-The project uses gradle buildscripts maintained in [jvm-project-template](https://github.com/skiedrowski/jvm-project-template). The scripts are conveniently organized in the `buildscripts` folder.
+The project uses gradle buildscripts maintained in [jvm-project-template](https://github.com/skiedrowski/jvm-project-template). The scripts are conveniently organized in the `buildscripts` folder. This folder contains a the file [buildscripts.info.md](../buildscripts/buildscripts.info_.md) which includes the VERSION of the jvm-project-template used. 
 
 Each script implements a build feature in a reasonable granularity. They should be included into the main/module build.gradle to keep the build.gradle itself small and readable.
 
