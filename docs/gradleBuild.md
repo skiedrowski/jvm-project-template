@@ -62,7 +62,7 @@ Application Tasks depend on somethink like [applicationSnippets](../buildscripts
 
 create app in build/install
 
-	gradlew installApp
+	gradlew installDist
 
 create zip containing the whole app (zips the result of installApp, suitable for distribution)
 
