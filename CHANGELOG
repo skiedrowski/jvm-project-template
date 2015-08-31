@@ -1,12 +1,15 @@
 CHANGELOG
 =========
 
-V0.6+ (IN PROGRESS)
--------------------
+V0.8 (IN PROGRESS)
+-----------------
+
+V0.7 (2015-07-10)
+-----------------
 * kotlin snippet update from M10 to M12
 * rename showcase JUnit Test category from `SlowTest` to `SequentialTest`
 * update gradle 2.2 to 2.5
-* new buildscript "loadVersions.gradle" with example snippet
+* allow loading dependency version from a separate file "versions.groovy", new buildscript "loadVersions.gradle" with example snippet
 * a number of smaller fixes, enhancements, and docs
 
 V0.6 (2015-06-15)

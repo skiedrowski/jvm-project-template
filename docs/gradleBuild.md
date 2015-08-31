@@ -74,9 +74,10 @@ run the application
 
 ###Possible Release Process
 
- * set release version (without -SNAPSHOT) in local build.gradle
- * commit && push
- * if the version to be released already exists in the repository, it has to be deleted firstly (or you'll get "error code 400: bad request")
- * run gradlew clean build [integrationTest] upload
- * set next snapshot version (with -SNAPSHOT) in local build.gradle
- * commit && push
+* Update CHANGELOG
+* set release version (without -SNAPSHOT) in local build.gradle
+* commit && push
+* if the version to be released already exists in the repository, it has to be deleted firstly (or you'll get "error code 400: bad request")
+* run gradlew clean build [integrationTest] upload
+* set next snapshot version (with -SNAPSHOT) in local build.gradle
+* commit && push
