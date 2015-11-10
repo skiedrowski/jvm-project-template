@@ -16,14 +16,7 @@ apply plugin: 'kotlin'
 
 dependencies {
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-
-//see http://kotlinlang.org/docs/reference/using-gradle.html
-compileKotlin {
-	kotlinOptions.annotations = file('annotations')
-}
-compileTestKotlin {
-	kotlinOptions.annotations = file('annotations')
+	compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 
 //TODO KOTLIN
