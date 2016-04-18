@@ -1,6 +1,6 @@
 //TODO the following needs to be put into build.gradle
 //buildscript {
-//	ext.kotlin_version = '0.12.412'
+//	ext.kotlin_version = '1.0.1-2'
 //	repositories {
 //		mavenCentral()
 //	}
@@ -18,13 +18,6 @@ dependencies {
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 	compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
-
-//TODO KOTLIN
-//http://confluence.jetbrains.com/display/Kotlin/Kotlin+Build+Tools?focusedCommentId=51187103#comment-51187103
-//http://youtrack.jetbrains.com/issue/KT-3490
-//http://forums.gradle.org/gradle/topics/test_task_scan_directory
-//should be fixed since M0.6?!?!
-test.testClassesDir = project.tasks.compileTestKotlin.destinationDir
 
 //
 // Other plugins than kotlin allow putting the buildscript section into an extra file, but kotlin 0.9.66 throws a NPE
