@@ -18,6 +18,19 @@
 //     tasks.withType(Pmd) {
 //         exclude excludePatternAntStyle
 //     }
+//
+// HINT II: since gradle 2.8 we're getting
+//      "java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/validation/ConstraintViolationException"
+// in projects with "javax.validation:validation-api:..." or "javax:javaee-api:..." dependencies.
+// one solution could be to migrate to "compileOnly" (available since gradle 2.12 or so) for these dependencies... however this is a big change for
+// many projects, so a workaround is to add
+//	    tasks.withType(Pmd) {
+//          classpath = null
+//      }
+// directly after {{apply from: "$buildscriptDir/codequality.gradle"}}.
+//
+//      via https://discuss.gradle.org/t/upgrading-gradle-from-2-7-to-2-8-results-in-pmd-false-positives/13460
+
 
 def staticAnalysisCfgDir = "$rootProject.projectDir/buildscripts/staticanalysis"
 
