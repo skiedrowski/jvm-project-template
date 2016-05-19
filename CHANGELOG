@@ -1,10 +1,12 @@
 CHANGELOG
 =========
 
-V0.8 (IN PROGRESS)
+V0.8 (2016-05-19)
 -----------------
-* kotlin snippet update to 1.0.0
-* update gradle 2.5 to 2.12
+* kotlin snippet update to 1.0.1-2
+* update gradle 2.5 to 2.13
+* javaee snippet update
+* PMD: remove rule AbstractClassWithoutAbstractMethod
 
 V0.7 (2015-07-10)
 -----------------
