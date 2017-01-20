@@ -1,7 +1,28 @@
 //http://www.jworks.nl/2013/06/03/jacoco-code-coverage-with-gradle/
 //http://www.gradle.org/docs/current/userguide/jacoco_plugin.html
 
-apply plugin: 'jacoco'
+//apply within root project, even if subprojects are used
+subprojects {
+	apply plugin: 'jacoco'
+
+	// START this is needed for "cross-subproject" (full) sonarqube coverage,
+	// see http://stackoverflow.com/questions/41737758/sonarqube-coverage-incomplete-on-multimodule-gradle-project-with-jacoco
+	tasks.withType(Test) {
+		// redirect all coverage data to one file
+		// ... needs cleaning the data prior to the build to avoid accumulating coverage data of different runs.
+		// see `task cleanJacoco`
+		jacoco {
+			destinationFile = file("$rootProject.buildDir/jacoco/test.exec")
+		}
+	}
+}
+
+//needed to clean merged jacoco file (if no other plugin/task cleans $rootProject.buildDir)
+task cleanJacoco(dependsOn: "clean") {
+	println "cleaning $rootProject.buildDir/jacoco"
+	delete "$rootProject.buildDir/jacoco"
+}
+// END this is needed for "cross-subproject" (full) sonarqube coverage
 
 //jacoco {
 //	toolVersion = "0.7.1.201405082137"

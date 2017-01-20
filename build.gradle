@@ -7,10 +7,10 @@ apply from: "$buildscriptDir/loadEnvironment.gradle"
 apply from: "$buildscriptDir/printGradleInfo.gradle"
 apply from: "$buildscriptDir/loadVersions.gradle"
 
+apply from: "$buildscriptDir/rootJacoco.gradle"
 subprojects {
 	apply plugin: 'java'
 	apply from: "$buildscriptDir/codequality.gradle"
-	apply from: "$buildscriptDir/jacoco.gradle"
 
 	//TODO setup START
 	version = '0.1-SNAPSHOT'
