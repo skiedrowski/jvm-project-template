@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+V0.9 (IN PROGRESS)
+-----------------
+* kotlin snippet update to 1.0.6
+* upgrade gradle 2.13 to 3.3
+* jacoco.gradle replaced by rootJacoco.gradle
+* add sonarqube snippet
+
 V0.8 (2016-05-19)
 -----------------
 * kotlin snippet update to 1.0.1-2
