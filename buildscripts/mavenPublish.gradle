@@ -1,5 +1,5 @@
 // Required properties:
-// MVN_URL_PREFIX     - we'll append "/snapshots" or "/releases" depending on the project.version
+// MVN_PUBLISH_URL_PREFIX     - we'll append "/snapshots" or "/releases" depending on the project.version
 // MVN_USER
 // MVN_PASSWORD
 //
@@ -22,7 +22,7 @@ publishing {
 		mavenJava(MavenPublication) {
 			from components.java
 
-			artifact testJar {
+			artifact jarTestClasses {
 				classifier 'test'
 			}
 			artifact sourcesJar {
@@ -34,9 +34,9 @@ publishing {
 	repositories {
 		maven {
 			if(project.version.endsWith('-SNAPSHOT')) {
-				url "${System.properties['MVN_URL']}/snapshots"
+				url "${System.properties['MVN_PUBLISH_URL_PREFIX']}/snapshots"
 			} else {
-				url "${System.properties['MVN_URL']}/releases"
+				url "${System.properties['MVN_PUBLISH_URL_PREFIX']}/releases"
 			}
 			credentials {
 				username System.properties['MVN_USER']
