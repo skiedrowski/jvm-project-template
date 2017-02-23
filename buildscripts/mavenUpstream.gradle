@@ -16,6 +16,8 @@
 
 apply plugin: 'maven'
 
+println("DEPRECATED - SWITCH TO mavenPublish.gradle!")
+
 uploadArchives.repositories.mavenDeployer {
 	repository(url: mvnRepoDeployURL) {
 		authentication(userName: mvnRepoDeployUser, password: mvnRepoDeployPwd)
