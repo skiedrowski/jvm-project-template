@@ -1,0 +1,17 @@
+// add
+//
+//  	plugins {
+//          id "org.sonarqube" version "2.2.1"
+//      }
+//
+// to the very top of your buildscript
+
+
+sonarqube {
+	properties {
+		property "sonar.login", System.properties['SONAR_USER']
+		property "sonar.password", System.properties['SONAR_PASSWORD']
+		property "sonar.host.url", System.properties['SONAR_HOST_URL']
+		property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+	}
+}
