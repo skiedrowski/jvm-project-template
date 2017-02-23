@@ -1,4 +1,7 @@
 //TODO setup: add project description
+plugins {
+	id "org.sonarqube" version "2.2.1"
+}
 description = """describe project"""
 
 def buildscriptDir = "$rootProject.projectDir/buildscripts"
@@ -7,12 +10,12 @@ apply from: "$buildscriptDir/loadEnvironment.gradle"
 apply from: "$buildscriptDir/printGradleInfo.gradle"
 apply from: "$buildscriptDir/loadVersions.gradle"
 
-apply from: "$buildscriptDir/rootJacoco.gradle"
+apply from: "$buildscriptDir/sonarqube.gradle"
+apply from: "$buildscriptDir/jacocoMultimodule.gradle"
+//apply from: "$buildscriptDir/jacocoSingleModule.gradle"
 subprojects {
 	apply plugin: 'java'
-	apply from: "$buildscriptDir/codequality.gradle"
 
-	//TODO setup START
 	version = '0.1-SNAPSHOT'
 	group = "com.example.mygid"
 
@@ -31,12 +34,10 @@ subprojects {
 			exclude group: "org.hamcrest"
 		}
 	}
-	//TODO setup END
 	
 	apply from: "$buildscriptDir/sourcesJar.gradle"
 	apply from: "$buildscriptDir/testJar.gradle"
 	apply from: "$buildscriptDir/javadocJar.gradle"
-	apply from: "$buildscriptDir/javadoc.gradle"
 	
 	test.maxParallelForks = Runtime.runtime.availableProcessors()
 
@@ -45,19 +46,7 @@ subprojects {
 	apply from: "$buildscriptDir/logAllTests.gradle"
 	apply from: "$buildscriptDir/ignoreTestFailuresIfConfiguredInEnv.gradle"
 
-	/*
-	ext {
-		mvnRepoDeployURL = TODO
-		mvnRepoDeployUser = TODO
-		mvnRepoDeployPwd = TODO
-	}
-	
-	apply from: "$buildscriptDir/mavenUpstream.gradle"
-	//add snapshop repo
-	uploadArchives.repositories.mavenDeployer.snapshotRepository(url: TODO) {
-		authentication(userName: mvnRepoDeployUser, password: mvnRepoDeployPwd)
-	}
-	*/
+	//apply from: "$buildscriptDir/mavenPublish.gradle"
 }
 apply from: "$buildscriptDir/fixJenkins.gradle"
 apply from: "$buildscriptDir/wrapper.gradle"

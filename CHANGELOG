@@ -4,9 +4,11 @@ CHANGELOG
 V0.9 (IN PROGRESS)
 -----------------
 * kotlin snippet update to 1.0.6
-* upgrade gradle 2.13 to 3.3
-* jacoco.gradle replaced by rootJacoco.gradle
-* add sonarqube snippet
+* upgrade gradle 2.13 to 3.4
+* jacoco.gradle replaced by jacocoMultimodule.gradle and jacocoSingleModule.gradle
+* add sonarqube.gradle
+* remove pmd/checkstyle/findbugs
+* restructure javadoc
 
 V0.8 (2016-05-19)
 -----------------
