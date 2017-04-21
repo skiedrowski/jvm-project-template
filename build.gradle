@@ -1,7 +1,7 @@
-//TODO setup: add project description
 plugins {
 	id "org.sonarqube" version "2.2.1"
 }
+//TODO setup: add project description
 description = """describe project"""
 
 def buildscriptDir = "$rootProject.projectDir/buildscripts"
@@ -17,7 +17,7 @@ subprojects {
 	apply plugin: 'java'
 
 	version = '0.1-SNAPSHOT'
-	group = "com.example.mygid"
+	group = "com.example.mygid" // or "com.example.${rootProject.name}"
 
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
@@ -46,7 +46,7 @@ subprojects {
 	apply from: "$buildscriptDir/logAllTests.gradle"
 	apply from: "$buildscriptDir/ignoreTestFailuresIfConfiguredInEnv.gradle"
 
-	//apply from: "$buildscriptDir/mavenPublish.gradle"
+	apply from: "$buildscriptDir/mavenPublish.gradle"
 }
 apply from: "$buildscriptDir/fixJenkins.gradle"
 apply from: "$buildscriptDir/wrapper.gradle"

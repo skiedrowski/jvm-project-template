@@ -4,7 +4,7 @@ This build script is pretty similar to [jaxwsSnippets](jaxwsSnippets.md).
 
 	dependencies { jaxb 'com.sun.xml.bind:jaxb-xjc:2.2.4-1' }
 
-	//it is currently impossible to put that under ${build} since intelliJ would not see it
+	//approx. 2014: it is currently impossible to put that under ${build} since intelliJ would not see it
 	ext.genSourcesDir = "src/jaxb/java"
 
 	clean { delete genSourcesDir }
@@ -23,22 +23,30 @@ This build script is pretty similar to [jaxwsSnippets](jaxwsSnippets.md).
 		}
 	}
 
-	// skip analysis for source folder with generated sources
-	checkstyleJaxb.enabled = false
-	findbugsJaxb.enabled = false
-	pmdJaxb.enabled = false
+	jar { 
+		from sourceSets.jaxb.output
+		from sourceSets.....output
+	}
 
 	task jaxb () {
-		// perform actions
 		doLast {
+			//System.setProperty('javax.xml.accessExternalSchema', 'all')
 			ant.taskdef(name: 'xjc', classname: 'com.sun.tools.xjc.XJCTask', classpath: configurations.jaxb.asPath)
 			ant.jaxbTargetDir = file( genSourcesDir )
 			ant.jaxbTargetDir.mkdirs()
 			ant.xjc(
-					destdir: "${ant.jaxbTargetDir}",
-					package: 'TODO set package name',
-					schema: 'TODO full path to .xsd file'
-			)
+				destdir: "${ant.jaxbTargetDir}", 
+				/*encoding: 'UTF-8',*/ 
+				extension: 'true', 
+				target: '2.1',
+				package: 'TODO set package name',
+				schema: 'TODO full path to .xsd file'
+			) {
+				schema(dir: 'src/main/resources', includes: "**/*.xsd")
+				binding(dir: 'src/main/resources', includes: "**/*.xjb")
+				arg(value: '-npa')
+			}
 		}
 	}
 	compileJava.dependsOn(jaxb)
+	

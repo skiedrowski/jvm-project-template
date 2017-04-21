@@ -19,10 +19,27 @@ clean build directory
 run tests (only those which are NOT annotated with @Category(SequentialTest.class), if `execSequentialTestsSeparately.gradle` is used)
 
 	gradlew test
+	
+run single test
+
+	./gradlew -Dtest.single=OrderTest test
+	
+The name of the test is just the simple class name.
 
 run slow tests (only those which are annotated with @Category(SequentialTest.class), if `execSequentialTestsSeparately.gradle` is used)
 
 	gradlew sequentialTest
+	
+run integration tests (if configured in task "integrationTest") 
+
+	gradlew integrationTest
+	
+run single integration test
+
+	./gradlew -DintegrationTest.single=OrderITest integrationTest
+	
+The name of the test is just the simple class name.
+
 
 analyse (Checkstyle, PMD, Findbugs, JaCoCo)
 

@@ -1,21 +1,32 @@
 //TODO the following needs to be put into build.gradle
 //buildscript {
-//	ext.kotlin_version = '1.0.6'
+//	ext.kotlin_version = '1.1.1'
+//
 //	repositories {
 //		mavenCentral()
 //	}
+//
 //	dependencies {
 //		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//
+//// optional		classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+//// optional		classpath "org.jetbrains.kotlin:kotlin-noarg:$kotlin_version"
+//// optional       classpath "org.jetbrains.kotlin:kotlin-jpa:$kotlin_version"
 //	}
 //}
 //
 //apply from: "$buildscriptDir/kotlin.gradle"
+//// optional       apply plugin: 'kotlin-allopen'
+//// optional       apply plugin: 'kotlin-noarg'
+//// optional       apply plugin: 'org.jetbrains.kotlin.plugin.jpa'
+
+//the optional plugins need further config, refer to their respective homepages...
 
 apply plugin: 'kotlin'
 
 
 dependencies {
-	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 	compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 
