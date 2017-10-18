@@ -9,7 +9,7 @@ loadVersions()
 
 def loadVersions() {
 	def configFile = file('versions.groovy')
-	def slurper = new ConfigSlurper(environment)
+	def slurper = new ConfigSlurper()
 	def url = configFile.toURI().toURL()
 	def versions = slurper.parse(url)
 	project.ext.set('ver', versions)

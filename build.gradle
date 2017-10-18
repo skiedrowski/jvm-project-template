@@ -9,10 +9,10 @@ def buildscriptDir = "$rootProject.projectDir/buildscripts"
 apply from: "$buildscriptDir/loadEnvironment.gradle"
 apply from: "$buildscriptDir/printGradleInfo.gradle"
 apply from: "$buildscriptDir/loadVersions.gradle"
-
 apply from: "$buildscriptDir/sonarqube.gradle"
 apply from: "$buildscriptDir/jacocoMultimodule.gradle"
 //apply from: "$buildscriptDir/jacocoSingleModule.gradle"
+
 subprojects {
 	apply plugin: 'java'
 
