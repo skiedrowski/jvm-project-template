@@ -1,8 +1,11 @@
 CHANGELOG
 =========
 
+Vnext (IN PROGRESS)
+---------------------
+* 
 
-V0.10 (IN PROGRESS)
+V0.10 (2017-10-18)
 ------------------
 * upgrade gradle 3.3 to 4.1
 * use "all" distribution of gradle by defaults
