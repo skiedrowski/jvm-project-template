@@ -1,7 +1,7 @@
 // add
 //
 //  	plugins {
-//          id "org.sonarqube" version "2.2.1"
+//          id "org.sonarqube" version "2.5"
 //      }
 //
 // to the very top of your buildscript
