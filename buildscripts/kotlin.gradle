@@ -1,6 +1,6 @@
 //TODO the following needs to be put into build.gradle
 //buildscript {
-//	ext.kotlin_version = '1.1.4-3'
+//	ext.kotlin_version = '1.2.41'
 //
 //	repositories {
 //		mavenCentral()
@@ -22,11 +22,15 @@
 
 //the optional plugins need further config, refer to their respective homepages...
 
+
+//http://kotlinlang.org/docs/reference/using-gradle.html#using-gradle
+//http://kotlinlang.org/docs/reference/compiler-plugins.html
+
 apply plugin: 'kotlin'
 
 
 dependencies {
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 	compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 

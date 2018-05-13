@@ -3,6 +3,11 @@
  * Examples:
  * 		gradle [tasks]  			-> environment set to dev (default)
  * 		gradle -Penv=ci [tasks]	    -> environment set to ci
+ * 	
+ * 	the "env" may also be specified in file `gradle.properties`, i.e. 
+ * 	    env=ci
+ * 	    
+ * 	However, the commandline overrides gradle.properties.
  */
 loadConfiguration()
 

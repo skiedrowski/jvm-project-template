@@ -3,7 +3,14 @@ CHANGELOG
 
 Vnext (IN PROGRESS)
 ---------------------
-* 
+*
+
+V0.11 (2018-05-13)
+------------------
+* update jaxbSnippets.md
+* update kotlin.gradle (1.1.4 -> 1.2.41)
+* update loadEnvironment.gradle (just docs)
+* update wrapper.gradle (4.1 -> 4.7) 
 
 V0.10 (2017-10-18)
 ------------------

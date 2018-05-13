@@ -19,10 +19,16 @@ clean build directory
 run tests (only those which are NOT annotated with @Category(SequentialTest.class), if `execSequentialTestsSeparately.gradle` is used)
 
 	gradlew test
-	
-run single test
 
-	./gradlew -Dtest.single=OrderTest test
+run a single test 
+
+	gradlew test --tests=[testMethod, testClass, package, suite, ...]
+	
+see [Test filtering](https://docs.gradle.org/current/userguide/java_plugin.html#test_filtering)
+
+run a single test - old mechanism (faster for large projects): 
+
+	gradlew -Dtest.single=<SimpleTestClassName> test
 	
 The name of the test is just the simple class name.
 
@@ -40,10 +46,6 @@ run single integration test
 	
 The name of the test is just the simple class name.
 
-
-analyse (Checkstyle, PMD, Findbugs, JaCoCo)
-
-     gradlew check
 
 CodeCoverage (JaCoCo)
 
@@ -63,17 +65,17 @@ show dependency tree
 	gradlew :module:dependencies
 
 ### Maven (Upstream)
-Maven tasks depend on [mavenUpstream.gradle](../buildscripts/mavenUpstream.md) and the according configuration variables.
+Maven tasks depend on [mavenPublish.gradle](../buildscripts/mavenPublish.md) and the according configuration variables.
 Depending on the build, the following artifacts are uploaded: classes, sources, javadoc; snapshots/releases depending on `version`
 
 install into local maven
 
-	gradlew install
+	gradlew publishToMavenLocal
 
 upload into nexus (or another repositoy)
 
-	gradlew upload
-
+	gradlew publish
+	
 ###Application Tasks
 Application Tasks depend on somethink like [applicationSnippets](../buildscripts/snippets/applicationSnippets.md).
 
