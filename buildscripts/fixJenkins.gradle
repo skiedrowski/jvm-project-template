@@ -1,7 +1,7 @@
 //see http://stackoverflow.com/questions/20565115/garbled-output-from-gradle-when-redirecting-stderr-to-stdout-jenkins-gradle-plu
 
 allprojects {
-	tasks.withType(JavaCompile) {
+	tasks.withType(JavaCompile).configureEach {
 		doFirst {
 			if (environment == "ci") {
 				println "\n"
@@ -9,7 +9,7 @@ allprojects {
 		}
 	}
 
-	tasks.withType(Javadoc) {
+	tasks.withType(Javadoc).configureEach {
 		doFirst {
 			if (environment == "ci") {
 				println "\n"

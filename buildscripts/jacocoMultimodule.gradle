@@ -4,7 +4,7 @@ subprojects {
 
 	// START this is needed for "cross-subproject" (full) sonarqube coverage,
 	// see http://stackoverflow.com/questions/41737758/sonarqube-coverage-incomplete-on-multimodule-gradle-project-with-jacoco
-	tasks.withType(Test) {
+	tasks.withType(Test).configureEach {
 		// redirect all coverage data to one file, so sonarqube will detect and use it
 		// ... needs cleaning the data prior to the build to avoid accumulating coverage data of different runs.
 		// see `task cleanJacoco`

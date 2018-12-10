@@ -8,6 +8,7 @@ configurations {
 task jarTestClasses(type: Jar, description: "Assembles a jar archive containing common test classes of project " +
 		"$project.name", group: 'build') {
 	appendix = 'tests'
+	classifier 'tests'
 	dependsOn classes
 	from sourceSets.test.output
 }
