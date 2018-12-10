@@ -1,9 +1,15 @@
 CHANGELOG
 =========
 
-Vnext (IN PROGRESS)
+VNEXT (IN PROGRESS)
 ---------------------
 *
+
+V0.12 (IN PROGRESS)
+---------------------
+* update wrapper.gradle (4.7 -> 4.10.3) 
+* prepare for gradle 5
+
 
 V0.11 (2018-05-13)
 ------------------
