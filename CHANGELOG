@@ -1,15 +1,22 @@
 CHANGELOG
 =========
 
-VNEXT (IN PROGRESS)
----------------------
-*
+V20210310 (2021-03-10)
+----------------------
+* move many scripts from groovy to kts
+* loadEnvironment.groovy.kts uses different files (env_*.gradle.kts) than loadEnvironment.groovy (environment.groovy)
+* update wrapper.gradle.kts (gradle 6.8.1)
+* new versioning scheme
+* remove loadVersions.gradle (deprecated, better use buildSrc/.../Dependencies.kt)
+* add example for buildSrc/.../Dependencies.kt
+* add checkJdk.gradle.kts
+* remove deprecated mavenUpstream.groovy (use mavenPublish.groovy.kts instead)
+* add versionsCfg.groovy to exclude beta/alpha/...
 
-V0.12 (IN PROGRESS)
----------------------
-* update wrapper.gradle (4.7 -> 4.10.3) 
+V0.12 (2018-12-10)
+------------------
+* update wrapper.gradle (4.1 -> 4.10.3)
 * prepare for gradle 5
-
 
 V0.11 (2018-05-13)
 ------------------
