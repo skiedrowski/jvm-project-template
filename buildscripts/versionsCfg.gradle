@@ -1,0 +1,24 @@
+/*
+ * configure the versions plugin to skip alphas, betas, release-candidates and the like
+ * 
+ * Usage:
+ * 
+ * plugins {
+ *   id "com.github.ben-manes.versions" version "0.21.0"
+ * }
+ * 
+ * apply from: "$buildscriptDir/versionsCfg.gradle"
+ */
+
+dependencyUpdates.resolutionStrategy {
+	componentSelection { rules ->
+		rules.all { ComponentSelection selection ->
+			boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm', 'preview', 'b', 'ea'].any { qualifier ->
+				selection.candidate.version ==~ /(?i).*[.-]$qualifier[.\d-+]*/
+			}
+			if (rejected) {
+				selection.reject('Release candidate')
+			}
+		}
+	}
+}

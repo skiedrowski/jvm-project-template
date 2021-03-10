@@ -3,6 +3,6 @@ description = """implementation classes
 A typical user of this project should not rely on these classes as they are implementation details."""
 
 dependencies {
-	compile project(':project-api')
-	testCompile project(path: ':project-api', configuration: 'testJar')
+	implementation(project(":project-api"))
+	testImplementation(project(path = ":project-api", configuration = "testJar"))
 }

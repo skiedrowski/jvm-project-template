@@ -11,6 +11,6 @@ artifact."""
 
 
 dependencies {
-    runtime project(':project-api')
-    runtime project(':project-impl')
+    runtimeOnly(project(":project-api"))
+    runtimeOnly(project(":project-impl"))
 }
